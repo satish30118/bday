@@ -238,7 +238,7 @@
     }
 
     // Falling petals
-    const petals=['🌸','🌼','💮','🌺','🥀'];
+    const petals=["🌸","🌼","💮","🌺","🥀","🌷","🌹"];
     function startPetals(){
       setInterval(()=>{
         let p=document.createElement('div');
@@ -248,12 +248,15 @@
         p.style.animationDuration=(5+Math.random()*5)+"s";
         document.body.appendChild(p);
         setTimeout(()=>p.remove(),10500);
-      },80);
+      },60);
     }
 
     // Balloons 🎈
     function startBalloons(){
-      const balloons=["🎈","🎉","💝"];
+      const balloons = [
+  "🎈","🎉","💝","🎂","🍰","🎁","🍬","✨","🌟","🥳"
+];
+
       setInterval(()=>{
         let b=document.createElement('div');
         b.className='balloon';
@@ -261,8 +264,8 @@
         b.style.left=Math.random()*90+"vw";
         b.style.animationDuration=(8+Math.random()*5)+"s";
         document.body.appendChild(b);
-        setTimeout(()=>b.remove(),12000);
-      },1200);
+        setTimeout(()=>b.remove(),10000);
+      },250);
     }
 
     // Typewriter
