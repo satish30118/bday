@@ -209,7 +209,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
   <script>
     // Timer
-    let unlockDate = new Date("Aug 21, 2025 00:00:00").getTime();
+    let unlockDate = new Date("Aug 20, 2025 00:00:00").getTime();
     let btn = document.getElementById("surpriseBtn"), countdownEl=document.getElementById("countdown");
     let timerInterval = setInterval(()=>{
       let now = new Date().getTime(), diff = unlockDate - now;
@@ -248,13 +248,13 @@
         p.style.animationDuration=(5+Math.random()*5)+"s";
         document.body.appendChild(p);
         setTimeout(()=>p.remove(),10500);
-      },60);
+      },80);
     }
 
     // Balloons 🎈
     function startBalloons(){
       const balloons = [
-  "🎈","🎉","💝","🎂","🍰","🎁","🍬","✨","🌟","🥳"
+  "🎈","🎉","💝", "🎈","🎂", "🎈", "🍰","🎁","🍬","🎈", "✨","🌟","🥳"
 ];
 
       setInterval(()=>{
@@ -264,8 +264,8 @@
         b.style.left=Math.random()*90+"vw";
         b.style.animationDuration=(8+Math.random()*5)+"s";
         document.body.appendChild(b);
-        setTimeout(()=>b.remove(),10000);
-      },250);
+        setTimeout(()=>b.remove(),11000);
+      },300);
     }
 
     // Typewriter
