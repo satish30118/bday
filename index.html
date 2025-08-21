@@ -414,10 +414,10 @@
         let p = document.createElement('div');
         p.className = 'petal'; p.innerText = petals[Math.floor(Math.random() * petals.length)];
         p.style.left = Math.random() * 96 + "vw";
-        p.style.fontSize = (20 + Math.random() * 18) + "px";
+        p.style.fontSize = (24 + Math.random() * 10) + "px";
         p.style.animationDuration = (8 + Math.random() * 5) + "s";
         document.body.appendChild(p);
-        setTimeout(() => p.remove(), 10500);
+        setTimeout(() => p.remove(), 11000);
       }, 120);
     }
 
