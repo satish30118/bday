@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday!</title>
@@ -8,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(120deg, #ffdde1 0%, #ee9ca7 100%);
       min-height: 100vh;
@@ -17,38 +19,74 @@
     }
 
     /* Sparkle BG */
-    .sparkle-bg { position: fixed; inset: 0; z-index: 1; opacity: 0.35; pointer-events: none; }
+    .sparkle-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.35;
+      pointer-events: none;
+    }
 
     /* Intro */
     #intro {
-      min-height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      background: inherit; z-index: 5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: inherit;
+      z-index: 5;
     }
 
     .btn-hero {
       padding: 18px 50px;
-      border: none; border-radius: 40px;
-      font-size: 2em; font-weight: 700;
-      background: linear-gradient(90deg,#ff4b8e,#ffd6e8 90%);
-      color: #fff; cursor: pointer;
+      border: none;
+      border-radius: 40px;
+      font-size: 2em;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff4b8e, #ffd6e8 90%);
+      color: #fff;
+      cursor: pointer;
       box-shadow: 0 12px 28px #f6c5da70;
       transition: transform 0.3s ease, box-shadow 0.4s;
       animation: pulse 1.8s infinite;
     }
-    .btn-hero:hover { transform: scale(1.08); }
-    @keyframes pulse { 
-      0% { box-shadow: 0 0 8px #ff4b8e; } 
-      50% { box-shadow: 0 0 20px #ff4b8e; }
-      100% { box-shadow: 0 0 8px #ff4b8e; }
-    }
-    .btn-hero:disabled { background:#bbb; cursor:not-allowed; opacity:0.7; animation:none; }
 
-    .countdown { font-size: 1.2em; margin-top: 14px; color:#c81a7b; font-weight:600; }
+    .btn-hero:hover {
+      transform: scale(1.08);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 8px #ff4b8e;
+      }
+
+      50% {
+        box-shadow: 0 0 20px #ff4b8e;
+      }
+
+      100% {
+        box-shadow: 0 0 8px #ff4b8e;
+      }
+    }
+
+    .btn-hero:disabled {
+      background: #bbb;
+      cursor: not-allowed;
+      opacity: 0.7;
+      animation: none;
+    }
+
+    .countdown {
+      font-size: 1.2em;
+      margin-top: 14px;
+      color: #c81a7b;
+      font-weight: 600;
+    }
 
     /* Glass container */
     .glass {
-      background: rgba(255,255,255,0.55);
+      background: rgba(255, 255, 255, 0.55);
       border-radius: 32px;
       backdrop-filter: blur(12px);
       box-shadow: 0 8px 38px #ff8fb380;
@@ -58,19 +96,42 @@
       z-index: 3;
       animation: fadeUp 1.2s ease;
     }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .greet-big {
-      font-size: 2.2em; font-weight: 800;
-      background: linear-gradient(90deg,#ff4b8e,#d70fa3);
+      font-size: 2.2em;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff4b8e, #d70fa3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: 2px;
       margin-bottom: 16px;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       animation: zoomIn 1.3s ease;
     }
-    @keyframes zoomIn { from{opacity:0;transform:scale(0.85);} to{opacity:1;transform:scale(1);} }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
     .typewriter {
       min-height: 2em;
@@ -81,13 +142,29 @@
       line-height: 1.6em;
       letter-spacing: 0.5px;
     }
-    .typewriter strong { color:#ff4b8e; font-size:1.25em; }
-    .typewriter em { color:#d70fa3; font-weight:600; font-style:normal; }
-    .signature { display:block; margin-top:14px; font-size:1.05em; color:#880e4f; font-style:italic; }
+
+    .typewriter strong {
+      color: #ff4b8e;
+      font-size: 1.25em;
+    }
+
+    .typewriter em {
+      color: #d70fa3;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    .signature {
+      display: block;
+      margin-top: 14px;
+      font-size: 1.05em;
+      color: #880e4f;
+      font-style: italic;
+    }
 
     /* Slideshow */
     .slideshow-glass {
-      background: rgba(253,239,255,0.92);
+      background: rgba(253, 239, 255, 0.92);
       border-radius: 25px;
       padding: 14px 0 8px;
       box-shadow: 0 2px 18px #0001;
@@ -95,80 +172,168 @@
       margin: 20px auto;
       animation: fadeUp 1.6s ease;
     }
+
     .slide-img {
-      width: 95%; max-width: 400px;
+      width: 95%;
+      max-width: 400px;
       border-radius: 18px;
-      margin: auto; display: none;
+      margin: auto;
+      display: none;
       box-shadow: 0 3px 22px #ee9ca780;
       transition: opacity 0.7s;
     }
-    .slide-img.active { display: block; opacity: 1; }
-    .slide-thumbs { display: flex; justify-content: center; gap:8px; margin-top: 7px; }
-    .slide-thumb {
-      width:52px; height:40px; border-radius:8px;
-      object-fit: cover; opacity:0.6;
-      transition: opacity 0.2s, transform 0.2s;
-      cursor:pointer; border:2px solid transparent;
+
+    .slide-img.active {
+      display: block;
+      opacity: 1;
     }
-    .slide-thumb:hover { transform:scale(1.05); }
-    .slide-thumb.active { opacity:1; border-color:#ee9ca7; }
+
+    .slide-thumbs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 7px;
+    }
+
+    .slide-thumb {
+      width: 52px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+      opacity: 0.6;
+      transition: opacity 0.2s, transform 0.2s;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .slide-thumb:hover {
+      transform: scale(1.05);
+    }
+
+    .slide-thumb.active {
+      opacity: 1;
+      border-color: #ee9ca7;
+    }
 
     /* Floating petals */
     .petal {
-      position: fixed; top: -40px; z-index: 11;
-      font-size: 22px; opacity: 0.8;
+      position: fixed;
+      top: -40px;
+      z-index: 11;
+      font-size: 22px;
+      opacity: 0.8;
       animation: fall linear forwards;
       pointer-events: none;
     }
+
     @keyframes fall {
-      0% { transform: translateY(0) rotate(0) scale(0.85);}
-      90%{opacity:1;}
-      100%{ transform: translateY(110vh) rotate(320deg) scale(1.1); opacity:0; }
+      0% {
+        transform: translateY(0) rotate(0) scale(0.85);
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(320deg) scale(1.1);
+        opacity: 0;
+      }
     }
 
     /* Floating balloons 🎈 */
     .balloon {
-      position: fixed; bottom: -100px;
-      font-size: 2.2em; z-index: 9;
+      position: fixed;
+      bottom: -100px;
+      font-size: 2.2em;
+      z-index: 9;
       animation: rise 10s linear infinite;
     }
+
     @keyframes rise {
-      from { transform: translateY(0); opacity: 1;}
-      to { transform: translateY(-120vh); opacity: 0; }
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
     }
 
     /* Music Button */
     .music-btn {
-      position: fixed; right: 18px; bottom: 18px;
-      z-index: 99; width: 64px; height: 64px;
-      border: none; border-radius: 50%;
-      background: linear-gradient(135deg,#ffdde1,#ee9ca7);
-      display: flex; align-items: center; justify-content: center;
-      cursor:pointer; box-shadow:0 2px 14px #fbcff680;
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 99;
+      width: 64px;
+      height: 64px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 14px #fbcff680;
     }
-    .music-btn svg { width: 38px; height: 38px; fill:#c81a7b; }
-    .music-btn:hover { background:#ff4b8e; }
+
+    .music-btn svg {
+      width: 38px;
+      height: 38px;
+      fill: #c81a7b;
+    }
+
+    .music-btn:hover {
+      background: #ff4b8e;
+    }
 
     @media (max-width:700px) {
-      .glass { max-width:86%; }
-      .greet-big { font-size: 1.4em; }
-      .slide-img { max-width:80%; }
-      .btn-hero{font-size: 1.2em;}
+      .glass {
+        max-width: 86%;
+      }
+
+      .greet-big {
+        font-size: 1.3em;
+      }
+
+      .slide-img {
+        max-width: 90%;
+      }
+
+      .btn-hero {
+        font-size: 1.2em;
+      }
+
+      .balloon {
+        font-size: 1.7em !important;
+        /* reduced from 2.2em */
+      }
+
+      /* Petals smaller */
+      .petal {
+        font-size: 1.4 !important;
+        /* smaller size for flowers */
+      }
     }
   </style>
 </head>
+
 <body>
   <!-- Sparkle BG -->
   <svg class="sparkle-bg">
-    <circle cx="9%" cy="22%" r="35" fill="#ffdde1" opacity="0.45"/>
-    <circle cx="72%" cy="48%" r="48" fill="#ffd6e8" opacity="0.41"/>
-    <circle cx="94%" cy="10%" r="30" fill="#ffdde1" opacity="0.35"/>
-    <circle cx="71%" cy="92%" r="20" fill="#ffdde1" opacity="0.52"/>
+    <circle cx="9%" cy="22%" r="35" fill="#ffdde1" opacity="0.45" />
+    <circle cx="72%" cy="48%" r="48" fill="#ffd6e8" opacity="0.41" />
+    <circle cx="94%" cy="10%" r="30" fill="#ffdde1" opacity="0.35" />
+    <circle cx="71%" cy="92%" r="20" fill="#ffdde1" opacity="0.52" />
   </svg>
 
   <!-- Intro -->
   <div id="intro">
-    <button id="surpriseBtn" class="btn-hero" disabled aria-label="Open Birthday Surprise">Open Birthday Surprise! 🎁</button>
+    <button id="surpriseBtn" class="btn-hero" disabled aria-label="Open Birthday Surprise">Open Birthday Surprise!
+      🎁</button>
     <div id="countdown" class="countdown"></div>
   </div>
 
@@ -196,14 +361,18 @@
   <!-- Music controls -->
   <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Play or pause music" style="display:none;">
     <svg viewBox="0 0 64 64">
-      <g id="iconPlay"><polygon points="16,8 56,32 16,56"></polygon></g>
+      <g id="iconPlay">
+        <polygon points="16,8 56,32 16,56"></polygon>
+      </g>
       <g id="iconPause" style="display:none;">
         <rect x="18" y="12" width="10" height="40" rx="4"></rect>
         <rect x="36" y="12" width="10" height="40" rx="4"></rect>
       </g>
     </svg>
   </button>
-  <audio id="music" loop><source src="music.mp3" type="audio/mpeg"></audio>
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
   <audio id="celebrateSfx" src="music.mp3" preload="auto"></audio>
 
   <!-- Confetti -->
@@ -211,103 +380,104 @@
   <script>
     // Timer
     let unlockDate = new Date("Aug 21, 2025 00:00:00").getTime();
-    let btn = document.getElementById("surpriseBtn"), countdownEl=document.getElementById("countdown");
-    let timerInterval = setInterval(()=>{
+    let btn = document.getElementById("surpriseBtn"), countdownEl = document.getElementById("countdown");
+    let timerInterval = setInterval(() => {
       let now = new Date().getTime(), diff = unlockDate - now;
-      if(diff <= 0){
+      if (diff <= 0) {
         clearInterval(timerInterval);
-        btn.disabled=false;
-        countdownEl.innerHTML="🎉 It's time! Click the button!";
-        btn.onclick=revealSurprise;
+        btn.disabled = false;
+        countdownEl.innerHTML = "🎉 It's time! Click the button!";
+        btn.onclick = revealSurprise;
       } else {
-        let h=Math.floor(diff/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
-        countdownEl.innerHTML=`⏳ Unlocking in: ${h}h ${m}m ${s}s`;
+        let h = Math.floor(diff / 3600000), m = Math.floor((diff % 3600000) / 60000), s = Math.floor((diff % 60000) / 1000);
+        countdownEl.innerHTML = `⏳ Unlocking in: ${h}h ${m}m ${s}s`;
       }
-    },1000);
+    }, 1000);
 
     // Reveal surprise
-    function revealSurprise(){
-      document.getElementById("intro").style.display="none";
-      document.getElementById("mainContent").style.display="block";
-      document.getElementById("musicBtn").style.display="flex";
-      confetti({particleCount:160,spread:130,origin:{y:0.65}});
+    function revealSurprise() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
+      document.getElementById("musicBtn").style.display = "flex";
+      confetti({ particleCount: 160, spread: 130, origin: { y: 0.65 } });
       document.getElementById('celebrateSfx').play();
-      setTimeout(()=>confetti({particleCount:100,spread:80,origin:{y:0.7}}),900);
-      setTimeout(startPetals,200);
+      setTimeout(() => confetti({ particleCount: 100, spread: 80, origin: { y: 0.7 } }), 900);
+      setTimeout(startPetals, 200);
       startTypewriter();
       startBalloons();
     }
 
     // Falling petals
-    const petals=["🌸","🌼","💮","🌺","🥀","🌷","🌹"];
-    function startPetals(){
-      setInterval(()=>{
-        let p=document.createElement('div');
-        p.className='petal'; p.innerText=petals[Math.floor(Math.random()*petals.length)];
-        p.style.left=Math.random()*96+"vw";
-        p.style.fontSize=(18+Math.random()*26)+"px";
-        p.style.animationDuration=(5+Math.random()*5)+"s";
+    const petals = ["🌸", "🌼", "💮", "🌺", "🥀", "🌷", "🌹"];
+    function startPetals() {
+      setInterval(() => {
+        let p = document.createElement('div');
+        p.className = 'petal'; p.innerText = petals[Math.floor(Math.random() * petals.length)];
+        p.style.left = Math.random() * 96 + "vw";
+        p.style.fontSize = (22 + Math.random() * 18) + "px";
+        p.style.animationDuration = (5 + Math.random() * 5) + "s";
         document.body.appendChild(p);
-        setTimeout(()=>p.remove(),10500);
-      },150);
+        setTimeout(() => p.remove(), 10500);
+      }, 120);
     }
 
     // Balloons 🎈
-    function startBalloons(){
+    function startBalloons() {
       const balloons = [
-  "🎈","🎉","💝","🎂", "🎈", "🍰","🎁","🍬","🎈", "✨","🌟","🥳"
-];
+        "🎈", "💝", "🎂", "🎁", "🍬", "🎈", "✨", "🌟", "🥳"
+      ];
 
-      setInterval(()=>{
-        let b=document.createElement('div');
-        b.className='balloon';
-        b.innerText=balloons[Math.floor(Math.random()*balloons.length)];
-        b.style.left=Math.random()*90+"vw";
-        b.style.animationDuration=(8+Math.random()*5)+"s";
+      setInterval(() => {
+        let b = document.createElement('div');
+        b.className = 'balloon';
+        b.innerText = balloons[Math.floor(Math.random() * balloons.length)];
+        b.style.left = Math.random() * 90 + "vw";
+        b.style.animationDuration = (8 + Math.random() * 5) + "s";
         document.body.appendChild(b);
-        setTimeout(()=>b.remove(),11000);
-      },350);
+        setTimeout(() => b.remove(), 11000);
+      }, 400);
     }
 
     // Typewriter
-    let note="Dear <strong>Ilin ✨</strong>,<br><br>"+
-      "We wish you <em>endless happiness</em>, success, and all the love in the world. ❤<br>"+
-      "You’re not just our best friend, you’re <em>family</em>.<br>"+
-      "May this year bring you everything you dream of and more.<br>"+
-      "Always keep smiling and shining like you do! 💖🥳 🌈💕<br>"+
+    let note = "Dear <strong>Ilin ✨</strong>,<br><br>" +
+      "We wish you <em>endless happiness</em>, success, and all the love in the world. ❤<br>" +
+      "You’re not just our best friend, you’re <em>family</em>.<br>" +
+      "May this year bring you everything you dream of and more.<br>" +
+      "Always keep smiling and shining like you do! 💖🥳 🌈💕<br>" +
       "<span class='signature'>– Aakash & Satish</span>";
 
-    function startTypewriter(){
-      let tw=document.getElementById('typedNote'); let i=0; let speed=30;
-      (function type(){
-        tw.innerHTML=note.slice(0,i);
-        if(i<note.length){ i++; setTimeout(type,speed); }
+    function startTypewriter() {
+      let tw = document.getElementById('typedNote'); let i = 0; let speed = 30;
+      (function type() {
+        tw.innerHTML = note.slice(0, i);
+        if (i < note.length) { i++; setTimeout(type, speed); }
       })();
     }
 
     // Slideshow
-    let slideNow=0, autoSlideInterval;
-    function goToSlide(idx){ slideNow=idx; updateSlides(); }
-    function updateSlides(){
-      let slides=document.querySelectorAll('.slide-img'), thumbs=document.querySelectorAll('.slide-thumb');
-      slides.forEach(s=>s.classList.remove('active')); thumbs.forEach(t=>t.classList.remove('active'));
+    let slideNow = 0, autoSlideInterval;
+    function goToSlide(idx) { slideNow = idx; updateSlides(); }
+    function updateSlides() {
+      let slides = document.querySelectorAll('.slide-img'), thumbs = document.querySelectorAll('.slide-thumb');
+      slides.forEach(s => s.classList.remove('active')); thumbs.forEach(t => t.classList.remove('active'));
       slides[slideNow].classList.add('active'); thumbs[slideNow].classList.add('active');
     }
-    function autoNextSlide(){
-      slideNow=(slideNow+1)%document.querySelectorAll('.slide-img').length;
+    function autoNextSlide() {
+      slideNow = (slideNow + 1) % document.querySelectorAll('.slide-img').length;
       updateSlides();
     }
-    setTimeout(()=>{autoSlideInterval=setInterval(autoNextSlide,3000);},3500);
-    document.getElementById("slideshow").addEventListener("mouseenter",()=>clearInterval(autoSlideInterval));
-    document.getElementById("slideshow").addEventListener("mouseleave",()=>autoSlideInterval=setInterval(autoNextSlide,3000));
+    setTimeout(() => { autoSlideInterval = setInterval(autoNextSlide, 3000); }, 3500);
+    document.getElementById("slideshow").addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+    document.getElementById("slideshow").addEventListener("mouseleave", () => autoSlideInterval = setInterval(autoNextSlide, 3000));
 
     // Music toggle
-    function toggleMusic(){
-      let music=document.getElementById("music"), playIcon=document.querySelector("#iconPlay"), pauseIcon=document.querySelector("#iconPause");
-      if(music.paused){ music.play(); playIcon.style.display="none"; pauseIcon.style.display=""; }
-      else{ music.pause(); playIcon.style.display=""; pauseIcon.style.display="none"; }
+    function toggleMusic() {
+      let music = document.getElementById("music"), playIcon = document.querySelector("#iconPlay"), pauseIcon = document.querySelector("#iconPause");
+      if (music.paused) { music.play(); playIcon.style.display = "none"; pauseIcon.style.display = ""; }
+      else { music.pause(); playIcon.style.display = ""; pauseIcon.style.display = "none"; }
     }
-    window.onload=()=>updateSlides();
+    window.onload = () => updateSlides();
   </script>
 </body>
+
 </html>
