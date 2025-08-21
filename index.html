@@ -296,7 +296,7 @@
       }
 
       .greet-big {
-        font-size: 1.3em;
+        font-size: 1.2em;
       }
 
       .slide-img {
@@ -414,8 +414,8 @@
         let p = document.createElement('div');
         p.className = 'petal'; p.innerText = petals[Math.floor(Math.random() * petals.length)];
         p.style.left = Math.random() * 96 + "vw";
-        p.style.fontSize = (22 + Math.random() * 18) + "px";
-        p.style.animationDuration = (5 + Math.random() * 5) + "s";
+        p.style.fontSize = (20 + Math.random() * 18) + "px";
+        p.style.animationDuration = (8 + Math.random() * 5) + "s";
         document.body.appendChild(p);
         setTimeout(() => p.remove(), 10500);
       }, 120);
